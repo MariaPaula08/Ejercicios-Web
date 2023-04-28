@@ -1,30 +1,34 @@
 
-// Obtener los elementos del DOM
-const input = document.querySelector('input[type="text"]');
-const btnEnviar = document.querySelector('.btn');
+// Seleccionar los elementos HTML necesarios
+const input = document.querySelector('input');
+const btn = document.querySelector('.btn');
 const error = document.querySelector('.error');
-const mensajeAnterior = document.querySelector('.mensaje');
+const mensaje = document.querySelector('.mensaje');
 
-// Manejar el evento de clic en el botón "Enviar"
-btnEnviar.addEventListener('click', () => {
-  // Obtener el valor del campo de texto
-  const mensaje = input.value.trim();
+// Función que se ejecuta al hacer clic en el botón "Enviar"
+function enviarMensaje() {
+  // Obtener el valor del campo de entrada
+  const texto = input.value.trim();
 
-  // Validar que se haya ingresado un mensaje
-  if (mensaje.length > 0) {
-    // Mostrar el mensaje en la página
-    mensajeAnterior.textContent = mensaje;
-
-    // Limpiar el campo de texto
-    input.value = '';
-
-    // Ocultar el mensaje de error (si estaba visible)
-    error.classList.remove('visible');
+  // Verificar que el campo de entrada no está vacío
+  if (texto === '') {
+    error.style.display = 'block';
+    mensaje.innerText = '';
   } else {
-    // Mostrar mensaje de error
-    error.classList.add('visible');
+    // Ocultar el mensaje de error
+    error.style.display = 'none';
+
+    // Actualizar el elemento "mensaje" con el último mensaje enviado
+    mensaje.innerText = texto;
+
+    // Limpiar el campo de entrada
+    input.value = '';
   }
-});
+}
+
+// Agregar un evento "click" al botón "Enviar"
+btn.addEventListener('click', enviarMensaje);
+
 
 
 

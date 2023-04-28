@@ -11,7 +11,8 @@ body {
     background: greenyellow;
 }
 .btn {
-    width: 250px;
+    width: 300px;
+    padding: 4px;
     border-radius: 10px;
     box-shadow: 3px 3px 0px rgba(0, 0, 0, 90);
     display: flex;

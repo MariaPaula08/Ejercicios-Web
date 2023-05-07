@@ -1,7 +1,7 @@
 const btnReir = document.querySelector(".btn");
 const txtDeslizar = document.querySelector(".broma");
 
-var URL 
+var URL = "https://v2.jokeapi.dev/joke/Any?lang=es&type=single";
 
 btnReir.addEventListener("click", getMethod);
 
